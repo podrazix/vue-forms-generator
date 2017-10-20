@@ -1,6 +1,8 @@
 <template>
     <div class="container">
-        <art-form :creator="creator"></art-form>
+        <art-form :creator="creator" @submit="submited($event)"></art-form>
+
+        <pre>{{ formData }}</pre>
     </div>
 </template>
 
@@ -9,7 +11,9 @@
     export default {
         data(){
             return {
+                formData: {},
                 creator: [
+                    // row 1
                     [
                         {
                             model: 'name',
@@ -29,14 +33,8 @@
                             label: 'Data urodzenia'
                         }
                     ],
+                    // row 2
                     [
-
-                        {
-                            model: 'gender',
-                            type: 'radio',
-                            options: ['Male', 'Female'],
-                            label: 'Płeć'
-                        },
                         {
                             model: 'email',
                             type: 'text',
@@ -47,10 +45,19 @@
                 ]
             }
         },
+        methods: {
+            submited(data){
+                this.formData = data;
+            }
+        },
         components: {
             'art-form': Form
         }
     }
 </script>
 
-<style></style>
+<style>
+    pre{
+        margin-top: 50px;
+    }
+</style>

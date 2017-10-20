@@ -17,6 +17,13 @@ On row-array you can pass some field objects with options:
 
 in future there will be also: required, validation etc.
 
+## fields
+
+For now there is:
+* text field
+* date field
+
 ## view
 
 generator split row for equals parts depends on how many fields you have in row.
+
