@@ -1,30 +1,22 @@
-# vue
+## vue-form-generator
 
-> Vue.js course
+Simple project with form generator. It's simple.
 
-## Build Setup
+There are some *form component*.
+Just import to parent component and as *:creator* binding pass configuration object.
 
-``` bash
-# install dependencies
-npm install
+## configuration
 
-# serve with hot reload at localhost:8080
-npm run dev
+Configuration is array contain other arrays which represents rows in your form.
 
-# build for production with minification
-npm run build
+On row-array you can pass some field objects with options:
+* model - vue model for input,
+* type - type of field (**IMPORTANT**: it must be same as field component name)
+* placeholder
+* label
 
-# build for production and view the bundle analyzer report
-npm run build --report
+in future there will be also: required, validation etc.
 
-# run unit tests
-npm run unit
+## view
 
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+generator split row for equals parts depends on how many fields you have in row.
